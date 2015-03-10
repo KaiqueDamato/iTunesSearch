@@ -17,6 +17,8 @@
 		92C21CE11AAE76930052ABE6 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CDF1AAE76930052ABE6 /* TableViewCell.m */; };
 		92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C21CE01AAE76930052ABE6 /* TableViewCell.xib */; };
 		92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CE71AAE858E0052ABE6 /* Filme.m */; };
+		EC46EC211AAF2CC00091AA09 /* CabecalhoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC46EC201AAF2CC00091AA09 /* CabecalhoTableViewCell.m */; };
+		EC46EC231AAF34160091AA09 /* TableViewCellCabecalho.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC46EC221AAF34160091AA09 /* TableViewCellCabecalho.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		92C21CE01AAE76930052ABE6 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		92C21CE61AAE858E0052ABE6 /* Filme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filme.h; path = Entidades/Filme.h; sourceTree = "<group>"; };
 		92C21CE71AAE858E0052ABE6 /* Filme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Filme.m; path = Entidades/Filme.m; sourceTree = "<group>"; };
+		EC46EC1F1AAF2CC00091AA09 /* CabecalhoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabecalhoTableViewCell.h; sourceTree = "<group>"; };
+		EC46EC201AAF2CC00091AA09 /* CabecalhoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabecalhoTableViewCell.m; sourceTree = "<group>"; };
+		EC46EC221AAF34160091AA09 /* TableViewCellCabecalho.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellCabecalho.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,9 @@
 				92C21CDE1AAE76930052ABE6 /* TableViewCell.h */,
 				92C21CDF1AAE76930052ABE6 /* TableViewCell.m */,
 				92C21CE01AAE76930052ABE6 /* TableViewCell.xib */,
+				EC46EC221AAF34160091AA09 /* TableViewCellCabecalho.xib */,
+				EC46EC1F1AAF2CC00091AA09 /* CabecalhoTableViewCell.h */,
+				EC46EC201AAF2CC00091AA09 /* CabecalhoTableViewCell.m */,
 			);
 			name = Celulas;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC46EC231AAF34160091AA09 /* TableViewCellCabecalho.xib in Resources */,
 				92C21CC11AAE757A0052ABE6 /* Images.xcassets in Resources */,
 				92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */,
 				92C21CDD1AAE75DC0052ABE6 /* TableView.xib in Resources */,
@@ -251,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C21CBC1AAE757A0052ABE6 /* TableViewController.m in Sources */,
+				EC46EC211AAF2CC00091AA09 /* CabecalhoTableViewCell.m in Sources */,
 				92C21CDB1AAE75B30052ABE6 /* iTunesManager.m in Sources */,
 				92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */,
 				92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */,
