@@ -14,6 +14,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [_searchBar setDelegate:self];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,11 +24,11 @@
 }
 
 
-- (IBAction)botaoEnviar:(id)sender {
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     iTunesManager *itunes = [iTunesManager sharedInstance];
     
     TableViewController *tableview = (TableViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    tableview.midias = [itunes buscarMidias:_termoTextField.text];
+    tableview.midias = [itunes buscarMidias:[_searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@""]];
     [tableview.tableview reloadData];
 }
 

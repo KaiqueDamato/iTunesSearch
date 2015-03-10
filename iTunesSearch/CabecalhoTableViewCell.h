@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CabecalhoTableViewCell : UITableViewCell
+@interface CabecalhoTableViewCell : UITableViewCell <UISearchBarDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *termoTextField;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

@@ -28,7 +28,6 @@
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
-    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 100.f)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,9 +42,9 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([_midias count] == 0) {
-        return 1;
-    }
+//    if ([_midias count] == 0) {
+//        return 1;
+//    }
     return [_midias count];
 }
 
@@ -61,10 +60,12 @@
         TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
         
         Filme *filme = [_midias objectAtIndex:indexPath.row];
-
+    
+    if (![_midias count] == 0) {
         [celula.nome setText:filme.nome];
-        [celula.tipo setText:_headerView.termoTextField.text];
+        [celula.tipo setText:@"Filme"];
         [celula.genero setText:filme.genero];
+    }
 
     return celula;
 }
