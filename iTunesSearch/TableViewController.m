@@ -42,9 +42,6 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    if ([_midias count] == 0) {
-//        return 1;
-//    }
     return [_midias count];
 }
 
@@ -63,7 +60,7 @@
     
     if (![_midias count] == 0) {
         [celula.nome setText:filme.nome];
-        [celula.tipo setText:@"Filme"];
+        [celula.tipo setText:NSLocalizedString(@"Filmes", @"")];
         [celula.genero setText:filme.genero];
     }
 

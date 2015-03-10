@@ -19,6 +19,7 @@
 		92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CE71AAE858E0052ABE6 /* Filme.m */; };
 		EC46EC211AAF2CC00091AA09 /* CabecalhoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC46EC201AAF2CC00091AA09 /* CabecalhoTableViewCell.m */; };
 		EC46EC231AAF34160091AA09 /* TableViewCellCabecalho.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC46EC221AAF34160091AA09 /* TableViewCellCabecalho.xib */; };
+		EC87558B1AAF8A970061F1C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC87558D1AAF8A970061F1C4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,10 @@
 		EC46EC1F1AAF2CC00091AA09 /* CabecalhoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabecalhoTableViewCell.h; sourceTree = "<group>"; };
 		EC46EC201AAF2CC00091AA09 /* CabecalhoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabecalhoTableViewCell.m; sourceTree = "<group>"; };
 		EC46EC221AAF34160091AA09 /* TableViewCellCabecalho.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellCabecalho.xib; sourceTree = "<group>"; };
+		EC87558C1AAF8A970061F1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EC87558E1AAF8A990061F1C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EC8755901AAF8B800061F1C4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EC8755911AAF8C8A0061F1C4 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 		92C21CA71AAE757A0052ABE6 = {
 			isa = PBXGroup;
 			children = (
+				EC87558D1AAF8A970061F1C4 /* Localizable.strings */,
 				92C21CB21AAE757A0052ABE6 /* iTunesSearch */,
 				92C21CCC1AAE757A0052ABE6 /* iTunesSearchTests */,
 				92C21CB11AAE757A0052ABE6 /* Products */,
@@ -219,8 +225,10 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
+				fr,
+				pt,
 			);
 			mainGroup = 92C21CA71AAE757A0052ABE6;
 			productRefGroup = 92C21CB11AAE757A0052ABE6 /* Products */;
@@ -238,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC87558B1AAF8A970061F1C4 /* Localizable.strings in Resources */,
 				EC46EC231AAF34160091AA09 /* TableViewCellCabecalho.xib in Resources */,
 				92C21CC11AAE757A0052ABE6 /* Images.xcassets in Resources */,
 				92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */,
@@ -286,6 +295,20 @@
 			targetProxy = 92C21CCA1AAE757A0052ABE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC87558D1AAF8A970061F1C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC87558C1AAF8A970061F1C4 /* Base */,
+				EC87558E1AAF8A990061F1C4 /* en */,
+				EC8755901AAF8B800061F1C4 /* fr */,
+				EC8755911AAF8C8A0061F1C4 /* pt */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		92C21CD11AAE757A0052ABE6 /* Debug */ = {

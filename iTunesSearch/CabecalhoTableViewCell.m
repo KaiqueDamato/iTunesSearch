@@ -15,6 +15,7 @@
 - (void)awakeFromNib {
     // Initialization code
     [_searchBar setDelegate:self];
+    [_searchBar setPlaceholder:NSLocalizedString(@"Pesquisa", @"")];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -26,9 +27,8 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    
     TableViewController *tableview = (TableViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    tableview.midias = [itunes buscarMidias:[_searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@""]];
+    tableview.midias = [itunes buscarMidias:[_searchBar.text stringByReplacingOccurrencesOfString:@"-" withString:@""]];
     [tableview.tableview reloadData];
 }
 
