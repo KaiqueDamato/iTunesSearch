@@ -10,13 +10,15 @@
 
 @interface Podcast : NSObject
 
-@property (nonatomic, strong) NSString *nome;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *trackId;
 @property (nonatomic, strong) NSString *artista;
 @property (nonatomic, strong) NSString *duracao;
-@property (nonatomic, strong) NSString *genero;
+@property (nonatomic, strong) NSString *gender;
 @property (nonatomic, strong) NSString *pais;
+@property NSMutableArray *podcasts;
 
-- (NSMutableArray *)busca:(NSDictionary *)dicionario;
+- (instancetype)init;
+- (void)addObject:(NSDictionary *)item;
 
 @end

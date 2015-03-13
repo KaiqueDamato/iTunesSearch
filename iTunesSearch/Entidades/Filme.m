@@ -10,21 +10,23 @@
 
 @implementation Filme
 
-- (NSMutableArray *)busca:(NSDictionary *)dicionario {
-    NSArray *resultados = [dicionario objectForKey:@"results"];
-    NSMutableArray *filmes = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *item in resultados) {
-        Filme *filme = [[Filme alloc] init];
-        [filme setNome:[item objectForKey:@"trackName"]];
-        [filme setTrackId:[item objectForKey:@"trackId"]];
-        [filme setArtista:[item objectForKey:@"artistName"]];
-        [filme setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [filme setGenero:[item objectForKey:@"primaryGenreName"]];
-        [filme setPais:[item objectForKey:@"country"]];
-        [filmes addObject:filme];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _filmes = [[NSMutableArray alloc] init];
     }
-    return filmes;
+    return self;
+}
+
+- (void)addObject:(NSDictionary *)item {
+    Filme *filme = [[Filme alloc] init];
+    [filme setName:[item objectForKey:@"trackName"]];
+    [filme setTrackId:[item objectForKey:@"trackId"]];
+    [filme setArtista:[item objectForKey:@"artistName"]];
+    [filme setDuracao:[item objectForKey:@"trackTimeMillis"]];
+    [filme setGender:[item objectForKey:@"primaryGenreName"]];
+    [filme setPais:[item objectForKey:@"country"]];
+    [_filmes addObject:filme];
 }
 
 @end

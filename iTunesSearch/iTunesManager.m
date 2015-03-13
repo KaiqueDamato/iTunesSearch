@@ -11,6 +11,7 @@
 #import "Music.h"
 #import "Podcast.h"
 #import "Ebook.h"
+#import "Midia.h"
 
 @implementation iTunesManager
 
@@ -32,12 +33,12 @@ static bool isFirstAccess = YES;
 }
 
 
-- (NSArray *)buscarMidias:(NSString *)termo eTipo:(NSString *)tipo{
+- (void)buscarMidias:(NSString *)termo {
     if (!termo) {
         termo = @"";
     }
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=%@", termo, tipo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=all&limit=200", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -46,24 +47,28 @@ static bool isFirstAccess = YES;
                                                                 error:&error];
     if (error) {
         NSLog(@"Não foi possível fazer a busca. ERRO: %@", error);
-        return nil;
     }
     
     Filme *filme = [[Filme alloc] init];
-    Music *music = [[Music alloc] init];
+    Music *musica = [[Music alloc] init];
     Podcast *podcast = [[Podcast alloc] init];
     Ebook *ebook = [[Ebook alloc] init];
-    
 
-    if ([tipo isEqualToString:@"movie"]) {
-        return [filme busca:resultado];
-    } else if ([tipo isEqualToString:@"music"]){
-        return [music busca:resultado];
-    } else if ([tipo isEqualToString:@"podcast"]) {
-        return [podcast busca:resultado];
-    } else {
-        return [ebook busca:resultado];
+    NSArray *resultados = [resultado objectForKey:@"results"];
+    
+    for (NSDictionary *item in resultados) {
+        if ([[item objectForKey:@"kind"] isEqualToString:@"feature-movie"]) {
+            [filme addObject:item];
+        } else if ([[item objectForKey:@"kind"] isEqualToString:@"song"]) {
+            [musica addObject:item];
+        } else if ([[item objectForKey:@"kind"] isEqualToString:@"podcast"]) {
+            [podcast addObject:item];
+        } else if ([[item objectForKey:@"kind"] isEqualToString:@"ebook"]) {
+            [ebook addObject:item];
+        }
     }
+    _midia = [Midia sharedInstance];
+    _midia.dictionary = [[NSDictionary alloc] initWithObjects:@[filme.filmes, musica.musicas, podcast.podcasts, ebook.ebooks] forKeys:@[@"filme", @"musica", @"podcast", @"ebook"]];
 }
 
 

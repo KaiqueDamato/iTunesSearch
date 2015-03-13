@@ -10,21 +10,23 @@
 
 @implementation Ebook
 
-- (NSMutableArray *)busca:(NSDictionary *)dicionario {
-    NSArray *resultados = [dicionario objectForKey:@"results"];
-    NSMutableArray *ebooks = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *item in resultados) {
-        Ebook *ebook = [[Ebook alloc] init];
-        [ebook setNome:[item objectForKey:@"trackName"]];
-        [ebook setTrackId:[item objectForKey:@"trackId"]];
-        [ebook setArtista:[item objectForKey:@"artistName"]];
-        [ebook setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [ebook setGenero:[item objectForKey:@"primaryGenreName"]];
-        [ebook setPais:[item objectForKey:@"country"]];
-        [ebooks addObject:ebook];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _ebooks = [[NSMutableArray alloc] init];
     }
-    return ebooks;
+    return self;
+}
+
+- (void)addObject:(NSDictionary *)item {
+    Ebook *ebook = [[Ebook alloc] init];
+    [ebook setName:[item objectForKey:@"trackName"]];
+    [ebook setTrackId:[item objectForKey:@"trackId"]];
+    [ebook setArtista:[item objectForKey:@"artistName"]];
+    [ebook setDuracao:[item objectForKey:@"trackTimeMillis"]];
+    [ebook setGender:[item objectForKey:@"primaryGenreName"]];
+    [ebook setPais:[item objectForKey:@"country"]];
+    [_ebooks addObject:ebook];
 }
 
 @end

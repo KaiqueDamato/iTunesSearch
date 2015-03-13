@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Midia.h"
 
 @interface iTunesManager : NSObject
 
-/**
- * gets singleton object.
- * @return singleton
- */
+@property Midia *midia;
+
 + (iTunesManager*)sharedInstance;
 
-- (NSArray *)buscarMidias:(NSString *)termo eTipo:(NSString *)tipo;
+- (void)buscarMidias:(NSString *)termo;
 
 @end

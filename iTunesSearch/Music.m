@@ -10,21 +10,23 @@
 
 @implementation Music
 
-- (NSMutableArray *)busca:(NSDictionary *)dicionario {
-    NSArray *resultados = [dicionario objectForKey:@"results"];
-    NSMutableArray *musics = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *item in resultados) {
-        Music *music = [[Music alloc] init];
-        [music setNome:[item objectForKey:@"trackName"]];
-        [music setTrackId:[item objectForKey:@"trackId"]];
-        [music setArtista:[item objectForKey:@"artistName"]];
-        [music setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [music setGenero:[item objectForKey:@"primaryGenreName"]];
-        [music setPais:[item objectForKey:@"country"]];
-        [musics addObject:music];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _musicas = [[NSMutableArray alloc] init];
     }
-    return musics;
+    return self;
+}
+
+- (void)addObject:(NSDictionary *)item {
+    Music *music = [[Music alloc] init];
+    [music setName:[item objectForKey:@"trackName"]];
+    [music setTrackId:[item objectForKey:@"trackId"]];
+    [music setArtista:[item objectForKey:@"artistName"]];
+    [music setDuracao:[item objectForKey:@"trackTimeMillis"]];
+    [music setGender:[item objectForKey:@"primaryGenreName"]];
+    [music setPais:[item objectForKey:@"country"]];
+    [_musicas addObject:music];
 }
 
 @end

@@ -10,21 +10,23 @@
 
 @implementation Podcast
 
-- (NSMutableArray *)busca:(NSDictionary *)dicionario {
-    NSArray *resultados = [dicionario objectForKey:@"results"];
-    NSMutableArray *podcasts = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *item in resultados) {
-        Podcast *podcast = [[Podcast alloc] init];
-        [podcast setNome:[item objectForKey:@"trackName"]];
-        [podcast setTrackId:[item objectForKey:@"trackId"]];
-        [podcast setArtista:[item objectForKey:@"artistName"]];
-        [podcast setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [podcast setGenero:[item objectForKey:@"primaryGenreName"]];
-        [podcast setPais:[item objectForKey:@"country"]];
-        [podcasts addObject:podcast];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _podcasts = [[NSMutableArray alloc] init];
     }
-    return podcasts;
+    return self;
+}
+
+- (void)addObject:(NSDictionary *)item {
+    Podcast *podcast = [[Podcast alloc] init];
+    [podcast setName:[item objectForKey:@"trackName"]];
+    [podcast setTrackId:[item objectForKey:@"trackId"]];
+    [podcast setArtista:[item objectForKey:@"artistName"]];
+    [podcast setDuracao:[item objectForKey:@"trackTimeMillis"]];
+    [podcast setGender:[item objectForKey:@"primaryGenreName"]];
+    [podcast setPais:[item objectForKey:@"country"]];
+    [_podcasts addObject:podcast];
 }
 
 @end

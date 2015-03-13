@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "CabecalhoTableViewCell.h"
+@class Midia;
 
 @interface TableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property CabecalhoTableViewCell *headerView;
-@property NSArray *midias;
+@property Midia *midia;
 
 @end
 
