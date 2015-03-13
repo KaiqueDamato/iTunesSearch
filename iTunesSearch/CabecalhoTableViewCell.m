@@ -16,6 +16,9 @@
     // Initialization code
     [_searchBar setDelegate:self];
     [_searchBar setPlaceholder:NSLocalizedString(@"Pesquisa", @"")];
+    _pickerView.delegate = self;
+    _pickerView.dataSource = self;
+    _opcoes = @[@"",@"movie",@"music",@"podcast",@"ebook"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -28,8 +31,28 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     iTunesManager *itunes = [iTunesManager sharedInstance];
     TableViewController *tableview = (TableViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    tableview.midias = [itunes buscarMidias:[_searchBar.text stringByReplacingOccurrencesOfString:@"-" withString:@""]];
+    tableview.midias = [itunes buscarMidias:[_searchBar.text stringByReplacingOccurrencesOfString:@"-" withString:@""] eTipo:_selecionado];
     [tableview.tableview reloadData];
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [_opcoes count];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return _opcoes[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if ([_opcoes[row]  isEqual: @""]) {
+        _selecionado = @"all";
+    } else {
+        _selecionado = _opcoes[row];
+    }
 }
 
 @end

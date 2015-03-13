@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CabecalhoTableViewCell : UITableViewCell <UISearchBarDelegate>
+@interface CabecalhoTableViewCell : UITableViewCell <UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property NSArray *opcoes;
+@property NSString *selecionado;
 
 @end

@@ -10,6 +10,9 @@
 #import "TableViewCell.h"
 #import "iTunesManager.h"
 #import "Entidades/Filme.h"
+#import "Music.h"
+#import "Podcast.h"
+#import "Ebook.h"
 
 @interface TableViewController () {
     
@@ -26,8 +29,6 @@
     
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
-    
-#warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,19 +52,30 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        TableViewCell *celula1 = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadraoCabecalho"];
-        _tableview.tableHeaderView = celula1;
-        
-        TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
-        
-        Filme *filme = [_midias objectAtIndex:indexPath.row];
+    TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     
-    if (![_midias count] == 0) {
+    Filme *filme = [_midias objectAtIndex:indexPath.row];
+    Music *music = [_midias objectAtIndex:indexPath.row];
+    Podcast *podcast = [_midias objectAtIndex:indexPath.row];
+    Ebook *ebook = [_midias objectAtIndex:indexPath.row];
+    
+    if (![_midias count] == 0 && [_headerView.selecionado isEqualToString:@"movie"]) {
         [celula.nome setText:filme.nome];
-        [celula.tipo setText:NSLocalizedString(@"Filmes", @"")];
+        [celula.tipo setText:NSLocalizedString(_headerView.selecionado, @"")];
         [celula.genero setText:filme.genero];
+    } else if (![_midias count] == 0 && [_headerView.selecionado isEqualToString:@"music"]) {
+        [celula.nome setText:music.nome];
+        [celula.tipo setText:NSLocalizedString(_headerView.selecionado, @"")];
+        [celula.genero setText:music.genero];
+    } else if (![_midias count] == 0 && [_headerView.selecionado isEqualToString:@"podcast"]) {
+        [celula.nome setText:podcast.nome];
+        [celula.tipo setText:NSLocalizedString(_headerView.selecionado, @"")];
+        [celula.genero setText:podcast.genero];
+    } else if (![_midias count] == 0 && [_headerView.selecionado isEqualToString:@"ebook"]) {
+        [celula.nome setText:ebook.nome];
+        [celula.tipo setText:NSLocalizedString(_headerView.selecionado, @"")];
+        [celula.genero setText:ebook.artista];
     }
-
     return celula;
 }
 
@@ -72,7 +84,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 65;
+    return 190;
 }
 
 

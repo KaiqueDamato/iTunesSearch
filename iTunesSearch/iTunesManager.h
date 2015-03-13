@@ -16,6 +16,6 @@
  */
 + (iTunesManager*)sharedInstance;
 
-- (NSArray *)buscarMidias:(NSString *)termo;
+- (NSArray *)buscarMidias:(NSString *)termo eTipo:(NSString *)tipo;
 
 @end

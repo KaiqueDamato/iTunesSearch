@@ -8,6 +8,9 @@
 
 #import "iTunesManager.h"
 #import "Entidades/Filme.h"
+#import "Music.h"
+#import "Podcast.h"
+#import "Ebook.h"
 
 @implementation iTunesManager
 
@@ -29,12 +32,12 @@ static bool isFirstAccess = YES;
 }
 
 
-- (NSArray *)buscarMidias:(NSString *)termo {
+- (NSArray *)buscarMidias:(NSString *)termo eTipo:(NSString *)tipo{
     if (!termo) {
         termo = @"";
     }
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=movie", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=%@", termo, tipo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
@@ -46,21 +49,21 @@ static bool isFirstAccess = YES;
         return nil;
     }
     
-    NSArray *resultados = [resultado objectForKey:@"results"];
-    NSMutableArray *filmes = [[NSMutableArray alloc] init];
+    Filme *filme = [[Filme alloc] init];
+    Music *music = [[Music alloc] init];
+    Podcast *podcast = [[Podcast alloc] init];
+    Ebook *ebook = [[Ebook alloc] init];
     
-    for (NSDictionary *item in resultados) {
-        Filme *filme = [[Filme alloc] init];
-        [filme setNome:[item objectForKey:@"trackName"]];
-        [filme setTrackId:[item objectForKey:@"trackId"]];
-        [filme setArtista:[item objectForKey:@"artistName"]];
-        [filme setDuracao:[item objectForKey:@"trackTimeMillis"]];
-        [filme setGenero:[item objectForKey:@"primaryGenreName"]];
-        [filme setPais:[item objectForKey:@"country"]];
-        [filmes addObject:filme];
+
+    if ([tipo isEqualToString:@"movie"]) {
+        return [filme busca:resultado];
+    } else if ([tipo isEqualToString:@"music"]){
+        return [music busca:resultado];
+    } else if ([tipo isEqualToString:@"podcast"]) {
+        return [podcast busca:resultado];
+    } else {
+        return [ebook busca:resultado];
     }
-    
-    return filmes;
 }
 
 
