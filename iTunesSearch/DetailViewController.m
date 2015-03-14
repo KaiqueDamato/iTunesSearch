@@ -22,7 +22,7 @@
     NSArray *items = _midia.dictionary[_midia.keys[[_indexPath section]]];
     [self setTitle:_midia.keys[_indexPath.section]];
     
-    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [[items objectAtIndex:_indexPath.row] imagemItunes]]];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[[items objectAtIndex:_indexPath.row] imagemItunes]]];
     _imagem.image = [UIImage imageWithData:imageData];
     
     _nome.text = [[_midia.dictionary[_midia.keys[_indexPath.section]] objectAtIndex:_indexPath.row] name];

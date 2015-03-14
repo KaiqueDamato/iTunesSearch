@@ -79,13 +79,6 @@
                     <exclude reference="sVY-qn-eMb"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="GOx-mf-ywW"/>
-                    <exclude reference="Gsq-MD-t9k"/>
-                    <exclude reference="JHs-up-NJR"/>
-                    <exclude reference="UJc-kT-a4c"/>
-                    <exclude reference="c43-gQ-zTq"/>
-                    <exclude reference="hxH-sl-mXt"/>
-                    <exclude reference="yZe-iX-8fG"/>
                     <exclude reference="HKr-O5-OVh"/>
                     <exclude reference="Mib-6z-GNl"/>
                     <exclude reference="ZmX-UM-FcA"/>
@@ -95,6 +88,13 @@
                     <exclude reference="twk-Hh-Hbq"/>
                     <exclude reference="fp3-Fr-KqR"/>
                     <exclude reference="kUV-Z9-IUa"/>
+                    <exclude reference="GOx-mf-ywW"/>
+                    <exclude reference="Gsq-MD-t9k"/>
+                    <exclude reference="JHs-up-NJR"/>
+                    <exclude reference="UJc-kT-a4c"/>
+                    <exclude reference="c43-gQ-zTq"/>
+                    <exclude reference="hxH-sl-mXt"/>
+                    <exclude reference="yZe-iX-8fG"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -104,13 +104,6 @@
                     <include reference="sVY-qn-eMb"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="GOx-mf-ywW"/>
-                    <exclude reference="Gsq-MD-t9k"/>
-                    <include reference="JHs-up-NJR"/>
-                    <exclude reference="UJc-kT-a4c"/>
-                    <include reference="c43-gQ-zTq"/>
-                    <exclude reference="hxH-sl-mXt"/>
-                    <exclude reference="yZe-iX-8fG"/>
                     <include reference="HKr-O5-OVh"/>
                     <exclude reference="Mib-6z-GNl"/>
                     <include reference="ZmX-UM-FcA"/>
@@ -120,6 +113,13 @@
                     <exclude reference="twk-Hh-Hbq"/>
                     <include reference="fp3-Fr-KqR"/>
                     <include reference="kUV-Z9-IUa"/>
+                    <exclude reference="GOx-mf-ywW"/>
+                    <exclude reference="Gsq-MD-t9k"/>
+                    <include reference="JHs-up-NJR"/>
+                    <exclude reference="UJc-kT-a4c"/>
+                    <include reference="c43-gQ-zTq"/>
+                    <exclude reference="hxH-sl-mXt"/>
+                    <exclude reference="yZe-iX-8fG"/>
                 </mask>
             </variation>
         </view>

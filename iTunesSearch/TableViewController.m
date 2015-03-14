@@ -121,6 +121,8 @@
     celula.nome.text = [[items objectAtIndex:indexPath.row] name];
     [celula.tipo setText:_midia.keys[indexPath.section]];
     [celula.genero setText:[items[indexPath.row] gender]];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[[items objectAtIndex:indexPath.row] imagemItunes]]];
+    celula.imagemCelula.image = [UIImage imageWithData:imageData];
     
     return celula;
 }

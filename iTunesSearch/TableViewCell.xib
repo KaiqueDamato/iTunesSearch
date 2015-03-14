@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,14 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIA-JU-luV">
-                        <rect key="frame" x="8" y="8" width="284" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-yj-wnl">
-                        <rect key="frame" x="8" y="38" width="74" height="14"/>
+                        <rect key="frame" x="72" y="41" width="74" height="14"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" red="0.89928382640000004" green="0.12798005339999999" blue="0.001599563868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -42,26 +36,50 @@
                             </mask>
                         </variation>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fKA-bG-T1D">
+                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="cEC-DA-VJ5"/>
+                            <constraint firstAttribute="height" constant="64" id="m88-sm-HxI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIA-JU-luV">
+                        <rect key="frame" x="72" y="5" width="117" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="QVN-OD-KYj" secondAttribute="trailing" constant="13" id="0cO-Fv-pIX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="6Z5-yj-wnl" secondAttribute="trailing" id="20H-3b-RZ8"/>
                     <constraint firstItem="6Z5-yj-wnl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2gs-dT-fFx"/>
+                    <constraint firstAttribute="centerY" secondItem="fKA-bG-T1D" secondAttribute="centerY" id="88L-Gl-O3d"/>
                     <constraint firstItem="6Z5-yj-wnl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="96O-aR-ps1"/>
                     <constraint firstAttribute="centerY" secondItem="6Z5-yj-wnl" secondAttribute="centerY" constant="-12.5" id="ABX-Hn-t21"/>
                     <constraint firstAttribute="trailingMargin" secondItem="QVN-OD-KYj" secondAttribute="trailing" constant="13" id="B7H-sN-eSl"/>
                     <constraint firstAttribute="centerY" secondItem="QVN-OD-KYj" secondAttribute="centerY" constant="-12.5" id="D2J-Kh-Zkh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="6Z5-yj-wnl" secondAttribute="bottom" constant="1" id="IM8-K3-TSj"/>
+                    <constraint firstItem="6Z5-yj-wnl" firstAttribute="leading" secondItem="fKA-bG-T1D" secondAttribute="trailing" constant="8" id="LUp-UB-4AX"/>
                     <constraint firstItem="QVN-OD-KYj" firstAttribute="centerY" secondItem="6Z5-yj-wnl" secondAttribute="centerY" constant="3" id="O8f-Dh-ZGP"/>
                     <constraint firstItem="UIA-JU-luV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Q1V-YW-Wh5"/>
+                    <constraint firstItem="UIA-JU-luV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="U7B-1b-FdP"/>
                     <constraint firstItem="UIA-JU-luV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="YdC-rX-aV6"/>
                     <constraint firstAttribute="trailingMargin" secondItem="UIA-JU-luV" secondAttribute="trailing" id="cTH-Nq-14q"/>
+                    <constraint firstItem="UIA-JU-luV" firstAttribute="leading" secondItem="fKA-bG-T1D" secondAttribute="trailing" constant="8" id="cVd-68-4hW"/>
+                    <constraint firstItem="fKA-bG-T1D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="kFh-Ev-mkZ"/>
                     <constraint firstItem="6Z5-yj-wnl" firstAttribute="top" secondItem="UIA-JU-luV" secondAttribute="bottom" constant="5" id="tJH-0d-wda"/>
                     <constraint firstItem="QVN-OD-KYj" firstAttribute="centerY" secondItem="UIA-JU-luV" secondAttribute="centerY" id="yd0-Zc-tlz"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="Q1V-YW-Wh5"/>
+                        <exclude reference="YdC-rX-aV6"/>
+                        <exclude reference="cTH-Nq-14q"/>
                         <exclude reference="20H-3b-RZ8"/>
+                        <exclude reference="2gs-dT-fFx"/>
                         <exclude reference="96O-aR-ps1"/>
+                        <exclude reference="ABX-Hn-t21"/>
                         <exclude reference="tJH-0d-wda"/>
                         <exclude reference="B7H-sN-eSl"/>
                         <exclude reference="O8f-Dh-ZGP"/>
@@ -71,6 +89,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="genero" destination="QVN-OD-KYj" id="nus-Le-rwv"/>
+                <outlet property="imagemCelula" destination="fKA-bG-T1D" id="v7S-fC-fDr"/>
                 <outlet property="nome" destination="UIA-JU-luV" id="ubX-WX-gam"/>
                 <outlet property="tipo" destination="6Z5-yj-wnl" id="vYj-HE-tLd"/>
             </connections>
