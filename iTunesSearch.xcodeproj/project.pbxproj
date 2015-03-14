@@ -19,12 +19,12 @@
 		92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CE71AAE858E0052ABE6 /* Filme.m */; };
 		EC46EC211AAF2CC00091AA09 /* CabecalhoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC46EC201AAF2CC00091AA09 /* CabecalhoTableViewCell.m */; };
 		EC46EC231AAF34160091AA09 /* TableViewCellCabecalho.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC46EC221AAF34160091AA09 /* TableViewCellCabecalho.xib */; };
+		EC4A64571AB4D09400D7EA2D /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4A64561AB4D09400D7EA2D /* DetailView.xib */; };
+		EC4A645A1AB4D0D700D7EA2D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4A64591AB4D0D700D7EA2D /* DetailViewController.m */; };
 		EC87558B1AAF8A970061F1C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC87558D1AAF8A970061F1C4 /* Localizable.strings */; };
 		ECA6B18D1AB0893B00B0615C /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA6B18C1AB0893B00B0615C /* Music.m */; };
 		ECFE66231AB3043100D2275A /* Podcast.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE66221AB3043100D2275A /* Podcast.m */; };
 		ECFE66261AB304E000D2275A /* Ebook.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE66251AB304E000D2275A /* Ebook.m */; };
-		ECFE66311AB3219E00D2275A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE662F1AB3219E00D2275A /* DetailViewController.m */; };
-		ECFE66321AB3219E00D2275A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECFE66301AB3219E00D2275A /* DetailViewController.xib */; };
 		ECFE66351AB3256F00D2275A /* Midia.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFE66341AB3256F00D2275A /* Midia.m */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +61,9 @@
 		EC46EC1F1AAF2CC00091AA09 /* CabecalhoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabecalhoTableViewCell.h; sourceTree = "<group>"; };
 		EC46EC201AAF2CC00091AA09 /* CabecalhoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabecalhoTableViewCell.m; sourceTree = "<group>"; };
 		EC46EC221AAF34160091AA09 /* TableViewCellCabecalho.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellCabecalho.xib; sourceTree = "<group>"; };
+		EC4A64561AB4D09400D7EA2D /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		EC4A64581AB4D0D700D7EA2D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		EC4A64591AB4D0D700D7EA2D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		EC87558C1AAF8A970061F1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EC87558E1AAF8A990061F1C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EC8755901AAF8B800061F1C4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -71,9 +74,6 @@
 		ECFE66221AB3043100D2275A /* Podcast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Podcast.m; sourceTree = "<group>"; };
 		ECFE66241AB304E000D2275A /* Ebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ebook.h; sourceTree = "<group>"; };
 		ECFE66251AB304E000D2275A /* Ebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ebook.m; sourceTree = "<group>"; };
-		ECFE662E1AB3219E00D2275A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		ECFE662F1AB3219E00D2275A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		ECFE66301AB3219E00D2275A /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		ECFE66331AB3256F00D2275A /* Midia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Midia.h; sourceTree = "<group>"; };
 		ECFE66341AB3256F00D2275A /* Midia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Midia.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,9 +99,6 @@
 		92C21CA71AAE757A0052ABE6 = {
 			isa = PBXGroup;
 			children = (
-				ECFE662E1AB3219E00D2275A /* DetailViewController.h */,
-				ECFE662F1AB3219E00D2275A /* DetailViewController.m */,
-				ECFE66301AB3219E00D2275A /* DetailViewController.xib */,
 				EC87558D1AAF8A970061F1C4 /* Localizable.strings */,
 				92C21CB21AAE757A0052ABE6 /* iTunesSearch */,
 				92C21CCC1AAE757A0052ABE6 /* iTunesSearchTests */,
@@ -128,6 +125,9 @@
 				92C21CBA1AAE757A0052ABE6 /* TableViewController.h */,
 				92C21CBB1AAE757A0052ABE6 /* TableViewController.m */,
 				92C21CDC1AAE75DC0052ABE6 /* TableView.xib */,
+				EC4A64561AB4D09400D7EA2D /* DetailView.xib */,
+				EC4A64581AB4D0D700D7EA2D /* DetailViewController.h */,
+				EC4A64591AB4D0D700D7EA2D /* DetailViewController.m */,
 				92C21CD91AAE75B30052ABE6 /* iTunesManager.h */,
 				92C21CDA1AAE75B30052ABE6 /* iTunesManager.m */,
 				92C21CC01AAE757A0052ABE6 /* Images.xcassets */,
@@ -275,9 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC87558B1AAF8A970061F1C4 /* Localizable.strings in Resources */,
-				ECFE66321AB3219E00D2275A /* DetailViewController.xib in Resources */,
 				EC46EC231AAF34160091AA09 /* TableViewCellCabecalho.xib in Resources */,
 				92C21CC11AAE757A0052ABE6 /* Images.xcassets in Resources */,
+				EC4A64571AB4D09400D7EA2D /* DetailView.xib in Resources */,
 				92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */,
 				92C21CDD1AAE75DC0052ABE6 /* TableView.xib in Resources */,
 			);
@@ -305,10 +305,10 @@
 				ECA6B18D1AB0893B00B0615C /* Music.m in Sources */,
 				ECFE66351AB3256F00D2275A /* Midia.m in Sources */,
 				92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */,
-				ECFE66311AB3219E00D2275A /* DetailViewController.m in Sources */,
 				92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */,
 				92C21CE11AAE76930052ABE6 /* TableViewCell.m in Sources */,
 				92C21CB61AAE757A0052ABE6 /* main.m in Sources */,
+				EC4A645A1AB4D0D700D7EA2D /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

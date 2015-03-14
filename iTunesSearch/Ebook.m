@@ -26,6 +26,7 @@
     [ebook setDuracao:[item objectForKey:@"trackTimeMillis"]];
     [ebook setGender:[item objectForKey:@"primaryGenreName"]];
     [ebook setPais:[item objectForKey:@"country"]];
+    [ebook setImagemItunes:[item objectForKey:@"artworkUrl100"]];
     [_ebooks addObject:ebook];
 }
 

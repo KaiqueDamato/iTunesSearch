@@ -26,6 +26,7 @@
     [podcast setDuracao:[item objectForKey:@"trackTimeMillis"]];
     [podcast setGender:[item objectForKey:@"primaryGenreName"]];
     [podcast setPais:[item objectForKey:@"country"]];
+    [podcast setImagemItunes:[item objectForKey:@"artworkUrl100"]];
     [_podcasts addObject:podcast];
 }
 

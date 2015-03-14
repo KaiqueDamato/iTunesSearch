@@ -26,6 +26,7 @@
     [filme setDuracao:[item objectForKey:@"trackTimeMillis"]];
     [filme setGender:[item objectForKey:@"primaryGenreName"]];
     [filme setPais:[item objectForKey:@"country"]];
+    [filme setImagemItunes:[item objectForKey:@"artworkUrl100"]];
     [_filmes addObject:filme];
 }
 

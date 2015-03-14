@@ -26,6 +26,7 @@
     [music setDuracao:[item objectForKey:@"trackTimeMillis"]];
     [music setGender:[item objectForKey:@"primaryGenreName"]];
     [music setPais:[item objectForKey:@"country"]];
+    [music setImagemItunes:[item objectForKey:@"artworkUrl100"]];
     [_musicas addObject:music];
 }
 

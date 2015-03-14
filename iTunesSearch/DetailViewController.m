@@ -2,11 +2,13 @@
 //  DetailViewController.m
 //  iTunesSearch
 //
-//  Created by Kaique Damato on 3/13/15.
+//  Created by Kaique Damato on 3/14/15.
 //  Copyright (c) 2015 joaquim. All rights reserved.
 //
 
 #import "DetailViewController.h"
+#import "Midia.h"
+#import "Filme.h"
 
 @interface DetailViewController ()
 
@@ -16,7 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    _midia = [Midia sharedInstance];
+    NSArray *items = _midia.dictionary[_midia.keys[[_indexPath section]]];
+    [self setTitle:_midia.keys[_indexPath.section]];
+    
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [[items objectAtIndex:_indexPath.row] imagemItunes]]];
+    _imagem.image = [UIImage imageWithData:imageData];
+    
+    _nome.text = [[_midia.dictionary[_midia.keys[_indexPath.section]] objectAtIndex:_indexPath.row] name];
+    _genero.text = [[_midia.dictionary[_midia.keys[_indexPath.section]] objectAtIndex:_indexPath.row] gender];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

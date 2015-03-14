@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSString *duracao;
 @property (nonatomic, strong) NSString *gender;
 @property (nonatomic, strong) NSString *pais;
+@property NSString *imagemItunes;
+@property NSString *collectionName;
 @property NSMutableArray *filmes;
 
 - (instancetype)init;

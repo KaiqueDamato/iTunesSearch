@@ -14,9 +14,9 @@
 #import "Podcast.h"
 #import "Ebook.h"
 #import "Midia.h"
+#import "DetailViewController.h"
 
 @interface TableViewController () {
-    NSArray *keys;
     UISearchBar *s;
 }
 
@@ -31,11 +31,13 @@
     
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
+
     s = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
     [s setDelegate: self];
     self.navigationItem.titleView = s;
+    s.placeholder = NSLocalizedString(@"Pesquisar", nil);
     _midia = [Midia sharedInstance];
-    keys = @[@"filme", @"musica", @"podcast", @"ebook"];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchUpView)];
     [self.headerView addGestureRecognizer:tap];
 }
@@ -53,7 +55,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 //    NSIndexPath *indexPath;
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 50, 30)];
-    headerView.text = keys[section];
+    headerView.text = _midia.keys[section];
     headerView.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
     return headerView;
 }
@@ -83,8 +85,11 @@
         [s resignFirstResponder];
         return;
     }
-    UIViewController *detailView = [[UIViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    
+    DetailViewController *detailView = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
+    detailView.indexPath = indexPath;
     [self.navigationController pushViewController:detailView animated:YES];
+    
 }
 
 
@@ -111,12 +116,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
-    NSArray *items = _midia.dictionary[keys[[indexPath section]]];
-    
-//    Filme *filme = [_midia.dictionary[@"filme"] objectAtIndex:indexPath.row];
+    NSArray *items = _midia.dictionary[_midia.keys[[indexPath section]]];
 
     celula.nome.text = [[items objectAtIndex:indexPath.row] name];
-    [celula.tipo setText:keys[indexPath.section]];
+    [celula.tipo setText:_midia.keys[indexPath.section]];
     [celula.genero setText:[items[indexPath.row] gender]];
     
     return celula;
@@ -124,6 +127,10 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
 }
 
 @end

@@ -11,6 +11,7 @@
 @interface Midia : NSObject
 
 @property NSDictionary *dictionary;
+@property NSArray *keys;
 
 + (instancetype)sharedInstance;
 
