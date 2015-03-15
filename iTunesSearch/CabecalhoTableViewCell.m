@@ -29,7 +29,6 @@
 
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    iTunesManager *itunes = [iTunesManager sharedInstance];
     TableViewController *tableview = (TableViewController *)[UIApplication sharedApplication].keyWindow.rootViewController;
 //    tableview.midias = [itunes buscarMidias:[_searchBar.text stringByReplacingOccurrencesOfString:@"-" withString:@""]];
     [tableview.tableview reloadData];

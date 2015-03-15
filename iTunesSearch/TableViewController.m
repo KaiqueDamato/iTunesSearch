@@ -18,6 +18,8 @@
 
 @interface TableViewController () {
     UISearchBar *s;
+    iTunesManager *itunes;
+    NSUserDefaults *data;
 }
 
 @end
@@ -28,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem *buttonBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(pesquisa)];
     
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
@@ -35,6 +38,7 @@
     s = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
     [s setDelegate: self];
     self.navigationItem.titleView = s;
+    self.navigationItem.rightBarButtonItem = buttonBarItem;
     s.placeholder = NSLocalizedString(@"Pesquisar", nil);
     _midia = [Midia sharedInstance];
     
@@ -42,9 +46,23 @@
     [self.headerView addGestureRecognizer:tap];
 }
 
+- (void)pesquisa {
+    if ([_midia.dictionary count] != 0) {
+        itunes = [iTunesManager sharedInstance];
+        NSString *pesquisa = [[data objectForKey:@"pesquisa"] description];
+        [itunes buscarMidias:[pesquisa stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+        [self.tableview reloadData];
+    }
+}
+
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    iTunesManager *itunes = [iTunesManager sharedInstance];
-    [itunes buscarMidias:[searchBar.text stringByReplacingOccurrencesOfString:@"-" withString:@""]];
+    itunes = [iTunesManager sharedInstance];
+    if ([_midia.dictionary count] == 0) {
+        data = [NSUserDefaults standardUserDefaults];
+        [data setObject:searchBar.text forKey:@"pesquisa"];
+        [data synchronize];
+    }
+    [itunes buscarMidias:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
     [self.tableview reloadData];
 }
 
@@ -119,7 +137,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     NSArray *items = _midia.dictionary[_midia.keys[[indexPath section]]];
-
+    
     celula.nome.text = [[items objectAtIndex:indexPath.row] name];
     [celula.tipo setText:_midia.keys[indexPath.section]];
     [celula.genero setText:[items[indexPath.row] gender]];
