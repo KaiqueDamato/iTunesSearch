@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipo;
 @property (weak, nonatomic) IBOutlet UILabel *genero;
 @property (weak, nonatomic) IBOutlet UIImageView *imagemCelula;
+@property (weak, nonatomic) IBOutlet UIImageView *imagemCelulaIcon;
 
 @end

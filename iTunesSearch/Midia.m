@@ -31,6 +31,7 @@ static bool isFirstAccess = YES;
     if (self) {
         _dictionary = [[NSDictionary alloc] init];
         _keys = @[@"filme",@"musica",@"podcast",@"ebook"];
+        _iconImages = @[@"film",@"music",@"podcast",@"ebook"];
     }
     return self;
 }

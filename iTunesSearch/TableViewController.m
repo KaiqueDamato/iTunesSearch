@@ -49,11 +49,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([_midia.dictionary count] == 0) {
+        return 0;
+    }
     return 20;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    NSIndexPath *indexPath;
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 50, 30)];
     headerView.text = _midia.keys[section];
     headerView.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
@@ -95,7 +97,7 @@
 
 #pragma mark - Metodos do UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return [_midia.keys count];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -123,16 +125,13 @@
     [celula.genero setText:[items[indexPath.row] gender]];
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[[items objectAtIndex:indexPath.row] imagemItunes]]];
     celula.imagemCelula.image = [UIImage imageWithData:imageData];
+    celula.imagemCelulaIcon.image = [UIImage imageNamed:_midia.iconImages[indexPath.section]];
     
     return celula;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
 }
 
 @end

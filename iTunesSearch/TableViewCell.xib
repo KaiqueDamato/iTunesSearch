@@ -14,19 +14,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-yj-wnl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tipo da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-yj-wnl">
                         <rect key="frame" x="72" y="41" width="74" height="14"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" red="0.89928382640000004" green="0.12798005339999999" blue="0.001599563868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gênero" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVN-OD-KYj">
-                        <rect key="frame" x="222" y="34" width="57" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gênero" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVN-OD-KYj">
+                        <rect key="frame" x="151" y="37" width="80" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="oc3-9e-5ox"/>
                             <constraint firstAttribute="width" constant="65" id="vw5-Jy-qgf"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
@@ -43,9 +43,16 @@
                             <constraint firstAttribute="height" constant="64" id="m88-sm-HxI"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIA-JU-luV">
-                        <rect key="frame" x="72" y="5" width="117" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oD2-qh-tSb">
+                        <rect key="frame" x="236" y="0.0" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="2eV-Fb-HpQ"/>
+                            <constraint firstAttribute="height" constant="64" id="dQc-Xg-Mbh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIA-JU-luV">
+                        <rect key="frame" x="74" y="0.0" width="152" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -55,18 +62,26 @@
                     <constraint firstAttribute="trailingMargin" secondItem="6Z5-yj-wnl" secondAttribute="trailing" id="20H-3b-RZ8"/>
                     <constraint firstItem="6Z5-yj-wnl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2gs-dT-fFx"/>
                     <constraint firstAttribute="centerY" secondItem="fKA-bG-T1D" secondAttribute="centerY" id="88L-Gl-O3d"/>
+                    <constraint firstItem="UIA-JU-luV" firstAttribute="leading" secondItem="fKA-bG-T1D" secondAttribute="trailing" constant="5" id="8Yh-zj-4mP"/>
                     <constraint firstItem="6Z5-yj-wnl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="96O-aR-ps1"/>
                     <constraint firstAttribute="centerY" secondItem="6Z5-yj-wnl" secondAttribute="centerY" constant="-12.5" id="ABX-Hn-t21"/>
                     <constraint firstAttribute="trailingMargin" secondItem="QVN-OD-KYj" secondAttribute="trailing" constant="13" id="B7H-sN-eSl"/>
                     <constraint firstAttribute="centerY" secondItem="QVN-OD-KYj" secondAttribute="centerY" constant="-12.5" id="D2J-Kh-Zkh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="6Z5-yj-wnl" secondAttribute="bottom" constant="1" id="IM8-K3-TSj"/>
+                    <constraint firstItem="UIA-JU-luV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Kv4-VY-4eg"/>
                     <constraint firstItem="6Z5-yj-wnl" firstAttribute="leading" secondItem="fKA-bG-T1D" secondAttribute="trailing" constant="8" id="LUp-UB-4AX"/>
+                    <constraint firstItem="oD2-qh-tSb" firstAttribute="leading" secondItem="QVN-OD-KYj" secondAttribute="trailing" constant="5" id="N3d-ah-bAj"/>
+                    <constraint firstItem="oD2-qh-tSb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Nbf-H0-b66"/>
                     <constraint firstItem="QVN-OD-KYj" firstAttribute="centerY" secondItem="6Z5-yj-wnl" secondAttribute="centerY" constant="3" id="O8f-Dh-ZGP"/>
                     <constraint firstItem="UIA-JU-luV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Q1V-YW-Wh5"/>
+                    <constraint firstItem="QVN-OD-KYj" firstAttribute="leading" secondItem="6Z5-yj-wnl" secondAttribute="trailing" constant="5" id="R2w-I1-1zd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oD2-qh-tSb" secondAttribute="trailing" constant="-8" id="SU2-SF-vNC"/>
                     <constraint firstItem="UIA-JU-luV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="U7B-1b-FdP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="QVN-OD-KYj" secondAttribute="bottom" constant="-2" id="Y3J-Ok-BP8"/>
                     <constraint firstItem="UIA-JU-luV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="YdC-rX-aV6"/>
                     <constraint firstAttribute="trailingMargin" secondItem="UIA-JU-luV" secondAttribute="trailing" id="cTH-Nq-14q"/>
                     <constraint firstItem="UIA-JU-luV" firstAttribute="leading" secondItem="fKA-bG-T1D" secondAttribute="trailing" constant="8" id="cVd-68-4hW"/>
+                    <constraint firstItem="oD2-qh-tSb" firstAttribute="leading" secondItem="UIA-JU-luV" secondAttribute="trailing" constant="5" id="eTI-C4-wO3"/>
                     <constraint firstItem="fKA-bG-T1D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="kFh-Ev-mkZ"/>
                     <constraint firstItem="6Z5-yj-wnl" firstAttribute="top" secondItem="UIA-JU-luV" secondAttribute="bottom" constant="5" id="tJH-0d-wda"/>
                     <constraint firstItem="QVN-OD-KYj" firstAttribute="centerY" secondItem="UIA-JU-luV" secondAttribute="centerY" id="yd0-Zc-tlz"/>
@@ -74,14 +89,18 @@
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="Q1V-YW-Wh5"/>
+                        <exclude reference="U7B-1b-FdP"/>
                         <exclude reference="YdC-rX-aV6"/>
                         <exclude reference="cTH-Nq-14q"/>
+                        <exclude reference="cVd-68-4hW"/>
                         <exclude reference="20H-3b-RZ8"/>
                         <exclude reference="2gs-dT-fFx"/>
                         <exclude reference="96O-aR-ps1"/>
                         <exclude reference="ABX-Hn-t21"/>
                         <exclude reference="tJH-0d-wda"/>
+                        <exclude reference="0cO-Fv-pIX"/>
                         <exclude reference="B7H-sN-eSl"/>
+                        <exclude reference="D2J-Kh-Zkh"/>
                         <exclude reference="O8f-Dh-ZGP"/>
                         <exclude reference="yd0-Zc-tlz"/>
                     </mask>
@@ -90,6 +109,7 @@
             <connections>
                 <outlet property="genero" destination="QVN-OD-KYj" id="nus-Le-rwv"/>
                 <outlet property="imagemCelula" destination="fKA-bG-T1D" id="v7S-fC-fDr"/>
+                <outlet property="imagemCelulaIcon" destination="oD2-qh-tSb" id="FGe-i8-1Bv"/>
                 <outlet property="nome" destination="UIA-JU-luV" id="ubX-WX-gam"/>
                 <outlet property="tipo" destination="6Z5-yj-wnl" id="vYj-HE-tLd"/>
             </connections>

@@ -12,6 +12,7 @@
 
 @property NSDictionary *dictionary;
 @property NSArray *keys;
+@property NSArray *iconImages;
 
 + (instancetype)sharedInstance;
 
